@@ -900,7 +900,7 @@ body {
     width: 24px;
     height: 24px;
     background-color: #f5f5f5;
-    top: 124px;
+    bottom: 47px;
     border-radius: 50%;
     z-index: 999; }
   .coupon::before {
@@ -920,12 +920,11 @@ body {
     margin-top: 8px;
     margin-bottom: 16px; }
   .coupon__img {
-    width: 100px;
-    height: 100px;
+    width: 72px;
+    height: 72px;
     overflow: hidden;
-    margin-right: 8px;
-    position: relative;
-    flex-grow: 0; }
+    margin-right: 12px;
+    position: relative; }
     .coupon__img.disable::before {
       content: "已結束";
       width: 100%;
@@ -937,7 +936,7 @@ body {
       display: block;
       position: absolute;
       background-color: rgba(51, 51, 51, 0.8);
-      padding: 40% 30%;
+      padding: 35% 20%;
       z-index: 999; }
     .coupon__img img {
       height: 100%; }
@@ -946,9 +945,27 @@ body {
     line-height: 1.71;
     flex-grow: 1; }
   .coupon__title {
+    font-family: "Noto Sans TC", sans-serif;
     font-weight: 500;
     color: #333;
-    position: relative; }
+    position: relative;
+    font-size: 24px;
+    flex-basis: 100%; }
+  .coupon__label {
+    flex-basis: 100%;
+    margin: 8px 0; }
+    .coupon__label .label {
+      font-family: "Noto Sans TC", sans-serif;
+      padding: 4px 6px 4px 4px;
+      border-radius: 4px;
+      background-color: #e9f8f9;
+      font-size: 12px;
+      line-height: 1.67;
+      color: #2eb6c7; }
+      .coupon__label .label span {
+        margin: 0 3px; }
+      .coupon__label .label:not(:last-child) {
+        margin-right: 4px; }
   .coupon__checkbox {
     position: absolute;
     right: 0; }
@@ -970,14 +987,16 @@ body {
       height: 48px;
       transform: rotate(45deg);
       transform-origin: right top; }
-  .coupon__num, .coupon__age, .coupon__date {
+  .coupon__num, .coupon__time, .coupon__date {
+    font-family: "Noto Sans TC", sans-serif;
     font-weight: normal;
     font-size: 14px; }
-    .coupon__num span, .coupon__age span, .coupon__date span {
-      margin: 0 3px; }
+    .coupon__num span, .coupon__time span, .coupon__date span {
+      margin-right: 5px; }
   .coupon__num {
-    color: #2eb6c7; }
-  .coupon__age, .coupon__date {
+    color: #2eb6c7;
+    font-weight: 600; }
+  .coupon__time, .coupon__date {
     color: #959595; }
   .coupon__top, .coupon__bottom {
     padding: 12px;
@@ -985,6 +1004,7 @@ body {
   .coupon__top {
     padding-bottom: 24px;
     display: flex;
+    flex-wrap: wrap;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; }
   .coupon__bottom {
@@ -1021,6 +1041,11 @@ body {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis; }
+      .coupon__block__info--noRegistered, .coupon__block__info--Registered {
+        flex-basis: 100%;
+        text-align: center; }
+      .coupon__block__info--Registered {
+        color: #959595; }
       .coupon__block__info.active {
         overflow-wrap: inherit;
         white-space: normal;
@@ -1075,3 +1100,7 @@ body {
     background-size: auto 100%; }
     .block__imgBlock:nth-child(3) {
       background-size: 100% auto; } }
+
+@media only screen and (max-width: 576px) {
+  .coupon__info {
+    flex-basis: 60%; } }
